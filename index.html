@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Template</title>
+    <style>
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>---{ Review Template }---</h2>
+
+<form id="reviewForm">
+    <fieldset>
+        <legend>Graphics</legend>
+        <label><input type="radio" name="graphics" value="Awesome"> Awesome</label>
+        <label><input type="radio" name="graphics" value="Beautiful"> Beautiful</label>
+        <label><input type="radio" name="graphics" value="Good"> Good</label>
+        <label><input type="radio" name="graphics" value="Decent"> Decent</label>
+        <label><input type="radio" name="graphics" value="Bad"> Bad</label>
+        <label><input type="radio" name="graphics" value="DontLook"> Don't look too long at it</label>
+        <label><input type="radio" name="graphics" value="MSDOS"> MS-DOS</label>
+    </fieldset>
+
+    <fieldset>
+        <legend>Gameplay</legend>
+        <!-- Add options for Gameplay -->
+    </fieldset>
+
+    <fieldset>
+        <legend>Audio</legend>
+        <!-- Add options for Audio -->
+    </fieldset>
+
+    <fieldset>
+        <legend>Audience</legend>
+        <!-- Add options for Audience -->
+    </fieldset>
+
+    <fieldset>
+        <legend>PC Requirements</legend>
+        <!-- Add options for PC Requirements -->
+    </fieldset>
+
+    <fieldset>
+        <legend>Difficulty</legend>
+        <!-- Add options for Difficulty -->
+    </fieldset>
+
+    <fieldset>
+        <legend>Story</legend>
+        <!-- Add options for Story -->
+    </fieldset>
+
+    <fieldset>
+        <legend>Game Time</legend>
+        <!-- Add options for Game Time -->
+    </fieldset>
+
+    <fieldset>
+        <legend>Price</legend>
+        <!-- Add options for Price -->
+    </fieldset>
+
+    <fieldset>
+        <legend>Bugs</legend>
+        <!-- Add options for Bugs -->
+    </fieldset>
+
+    <fieldset>
+        <legend>? / 10</legend>
+        <!-- Add options for ? / 10 -->
+    </fieldset>
+
+    <button type="button" onclick="copyToClipboard()">Copy to Clipboard</button>
+</form>
+
+<p><a href="#">Link zur Erstellungsseite</a></p>
+
+<script>
+    function copyToClipboard() {
+        const reviewForm = document.getElementById('reviewForm');
+        const formData = new FormData(reviewForm);
+        let clipboardText = '---{ Review Template }---\n\n';
+
+        for (const [key, value] of formData.entries()) {
+            clipboardText += `${key}: ${value}\n`;
+        }
+
+        navigator.clipboard.writeText(clipboardText)
+            .then(() => {
+                alert('Auswahl wurde in die Zwischenablage kopiert!');
+            })
+            .catch((err) => {
+                console.error('Fehler beim Kopieren in die Zwischenablage:', err);
+            });
+    }
+</script>
+
+</body>
+</html>
